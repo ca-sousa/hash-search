@@ -1,4 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
+
+import logoImg from '../../assets/images/logo/logo-e-ae.svg'
+import landingPage from '../../assets/images/landing.svg'
 
 import './style.css'
 
@@ -7,7 +11,19 @@ function Landing() {
         <div id="page-landing">
             <div id="page-landing-content" className="container">
                 <div className="logo-container">
-                    <h2>Olá mundo</h2>
+                    <img src={logoImg} alt="Hasearch"/>
+                    <h4>Logue-se para começar sua busca.</h4>
+                </div>
+                <img 
+                    src={landingPage}
+                    alt="Hashtag" 
+                    className="hero-image"
+                />
+
+                <div className="button">
+                    <Link to="/study" className="study">
+                        Login
+                    </Link>                    
                 </div>
             </div>
         </div>
