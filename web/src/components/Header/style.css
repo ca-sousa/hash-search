@@ -1,0 +1,40 @@
+.page-header {
+    display: flex;
+    flex-direction: row;
+    height: 7rem;
+    background-color: var(--color-background);
+}
+
+.page-header .top-bar-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color=text-in-primary);
+    padding: 1.6rem 0;
+}
+
+.page-header .top-bar-container a {
+    text-decoration: none;
+    color: var(--color-text-base);
+    transition: opacity 0.2s;
+}
+
+.page-header .top-bar-container a:hover {
+    opacity: 0.6;
+}
+
+.page-header .top-bar-container .logo-img {
+    height: 4rem;
+    width: 12rem;
+}
+
+@media (min-width: 700px) {
+    .page-header {
+        height: 7rem;
+    }
+
+    .page-header .top-bar-container {
+        max-width: 150rem;
+    }
+}

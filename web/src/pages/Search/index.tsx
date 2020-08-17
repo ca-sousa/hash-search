@@ -1,11 +1,16 @@
 import React from 'react';
-import PageHeader from '../../components/PageHeader';
+import Header from '../../components/Header';
 
 import './style.css'
 
 function Search() {
     return (
-        <PageHeader title='Estes são os proffys disponíveis.'/>
+        <div id='page-search'>
+            <Header />
+            <div>
+                <h1> Carla </h1>
+            </div>
+        </div>
     );
 }
 
