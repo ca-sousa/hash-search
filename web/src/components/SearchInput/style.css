@@ -1,0 +1,23 @@
+.input {
+    position: static;
+    display: flex;
+    justify-content: center;
+}
+
+.input input {
+    width: 100%;
+    height: 5rem;
+    font:500 1.6rem Barlow;
+    border-radius: 1rem;
+    border-color: var(--color-background);
+    background-color: var(--color-background);
+    padding: 0 1.6rem;
+}
+
+
+.input input::placeholder{
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    font:500 1.6rem Barlow;
+}   

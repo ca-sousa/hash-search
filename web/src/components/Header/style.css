@@ -29,6 +29,11 @@
     width: 12rem;
 }
 
+.page-header .top-bar-container .navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
 @media (min-width: 700px) {
     .page-header {
         height: 7rem;

@@ -5,7 +5,12 @@ import './style.css'
 
 function Collection() {
     return (
-        <Header />
+        <div id="page-collection">
+            <Header />
+            <div>
+                <h1> Coleção </h1>
+            </div>
+        </div>
     );
 }
 
