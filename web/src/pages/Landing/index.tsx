@@ -21,7 +21,7 @@ function Landing() {
                 />
 
                 <div className="button">
-                    <Link to="/study" className="study">
+                    <Link to="/search" className="study">
                         Login
                     </Link>                    
                 </div>
