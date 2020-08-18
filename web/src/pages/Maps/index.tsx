@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
 import SearchInput from '../../components/SearchInput';
-import { HereMap } from './here-map';
+import { HereMap } from '../../components/HereMap';
 
 import './style.css'
 
@@ -11,7 +11,9 @@ function Maps() {
         <div id='page-map'>
             <Header />
             <main>
-                <SearchInput />
+                <div className="input-map">
+                    <SearchInput />
+                </div>
                 <HereMap/>
             </main>
         </div>

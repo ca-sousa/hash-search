@@ -2,19 +2,18 @@
 #page-map {
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-background-secundary);
 }
 
 #page-map main {
-    margin: 3.2rem auto;
-    width: 90%;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
 }
 
-#map {
+.input-map {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+    z-index: 1;
+    padding: 1rem 0 0 9rem;
 }
 
 @media (min-width: 700px) {
@@ -23,8 +22,12 @@
     }
 
     #page-map main {
-        padding: 3.2rem 0;
         max-width: 740px;
-        margin: 0 auto;
+        margin: 0;
+    }
+
+    .input-map {
+        padding: 1rem 0 0 42%;
+        width: 60%;
     }
 }
