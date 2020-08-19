@@ -6,7 +6,7 @@ import landingPage from '../../assets/images/landing.svg'
 
 import './style.css'
 
-function Landing() {
+function Landing( {authenticated} ) {
     return(
         <div id="page-landing">
             <div id="page-landing-content" className="container">
@@ -28,6 +28,8 @@ function Landing() {
             </div>
         </div>
     );
+
+    Landing.p
 }
 
 export default Landing;

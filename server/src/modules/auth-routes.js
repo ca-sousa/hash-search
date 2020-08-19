@@ -45,19 +45,37 @@ var t = new twit({
 });
 
 var params = {
-  q: '#cachorro',
-  count: '25',
-  result_type: 'popular',
+  q: '#cachorro', //query_string express
+  count: '2',
   lang: 'pt'
 }
 
-router.get('/search', (req, res) => {
-    t.get('search/tweets', params
-    ).catch(function(err){
-      console.log('Caught error', err.stack)
-    }).then(function (result) {
-      console.log('data', result.data)
-    })
+router.get('/search', async (req, res) => {
+  const twitterResponse = await t.get('search/tweets', params)
+  const response = twitterResponse.data.statuses.map((element, index) => {
+    return {
+      created_at: element.created_at,
+      text: element.text,
+      id: element.id_str
+    }
+  })
+  return res.json(response)
 });
+
+router.get('/search-map', async (req, res) => {
+  const twitterResponse = await t.get('search/tweets', params)
+  const response = twitterResponse.data.statuses.map((element, index) => {
+    return {
+      coordinates: element.geo ? element.geo.coordinates : null,
+    }
+  })
+  return res.json(response)
+});
+
+router.post('/add-colection', async (req, res) => {
+  console.log(req.body)
+  return res.json(response)
+});
+
 
 module.exports = router ;
