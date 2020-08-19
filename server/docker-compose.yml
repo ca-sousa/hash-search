@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: mongo:latest
+    container_name: db
+    restart: unless-stopped
+    volumes:
+      - dbdata:/data/db
+    networks:
+      - app-network
+    ports:
+        - 27017:27017
+
+networks:
+  app-network:
+    driver: bridge

@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import heart from '../../assets/images/icon/heart.svg'
 import map from '../../assets/images/icon/map.svg'
 import search from '../../assets/images/icon/search.svg'
+import user from '../../assets/images/icon/user.svg'
 import logo from '../../assets/images/logo/logo-azul-1.svg'
-
 
 import './style.css'
 
@@ -25,6 +25,9 @@ function Header() {
                     </Link>
                     <Link to='/collection'>
                         <img src={heart} alt="Sua Coleção" className="collection"/>
+                    </Link>
+                    <Link to='/collection'>
+                        <img src={user} alt="Sua Coleção" className="collection"/>
                     </Link>
                 </div>
             </div>
