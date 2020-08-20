@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
+
 import logoImg from '../../assets/images/logo/logo-e-ae.svg';
 import landingPage from '../../assets/images/landing.svg';
-import PropTypes from "prop-types";
 
 import './style.css';
 
-export default class Landing extends Component {
-    _handleSignInClick() {
+export default class Landing extends Component {    
+    _handleSignInClick = () => {
         window.open("http://localhost:3333/auth/twitter", "_self")
-    }
+    };
     
     render() {
         return(
@@ -23,20 +24,13 @@ export default class Landing extends Component {
                         alt="Hashtag" 
                         className="hero-image"
                     />
-    
-                    { !authenticated ? (
-                        <div className="button">
-                            <a onClick={_handleSignInClick} className="study">
-                                Login
-                            </a>                    
-                        </div>
-                    ) : {}}
+                    <div className="button">
+                        <a onClick={this._handleSignInClick} className="study">
+                            Login
+                        </a>                    
+                    </div>
                 </div>
             </div>
         );
     }
 }
-
-Landing.propTypes = {
-    authenticated: PropTypes.bool.isRequired
-};

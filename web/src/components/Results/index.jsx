@@ -22,12 +22,12 @@ export default class Results extends Component {
             <article className="tweet-item">
                 <header>
                     <div>
-                        <strong>{tweet.user}</strong>
-                        <span>{tweet.created_at}</span>
+                        <strong>Alguma coisa</strong>
+                        <span>23</span>
                     </div>
                 </header>
                 <p>
-                    {tweet.text}
+                    Este é um tweet
                 </p>
                 <footer>  
                     <button type='button'>

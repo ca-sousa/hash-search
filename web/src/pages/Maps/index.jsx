@@ -14,15 +14,15 @@ export default class Maps extends React.Component {
 
      _handleNotAuthenticated() {
         this.setState({ authenticated: false });
-        return false;
     };
     
     render () {
+        const { authenticated } = this.state;
         return (
             <div id='page-map'>
                 <Header 
-                    authenticated={state.authenticated}
-                    handleNotAuthenticated={_handleNotAuthenticated} 
+                    authenticated={authenticated}
+                    handleNotAuthenticated={this._handleNotAuthenticated} 
                 />
                 <main>
                     <div className="input-map">

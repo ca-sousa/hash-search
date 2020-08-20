@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
 
 import heart from '../../assets/images/icon/heart.svg'
 import map from '../../assets/images/icon/map.svg'
@@ -9,10 +10,10 @@ import logo from '../../assets/images/logo/logo-azul-1.svg'
 
 import './style.css'
 
-export default class Header extends Component {
-    _handleLogoutClick() {
+export default class Header extends Component {  
+    _handleLogoutClick = () => {
         window.open("http://localhost:3333/auth/logout", "_self");
-        handleNotAuthenticated();
+        this.props.handleNotAuthenticated();
     };
 
     render() {
@@ -32,14 +33,12 @@ export default class Header extends Component {
                         <Link to='/collection'>
                             <img src={heart} alt="Sua Coleção" className="collection"/>
                         </Link>
-                        { authenticated ? (
-                        <a onClick={_handleLogoutClick}>
+                        <a onClick={this._handleLogoutClick}>
                             <img src={user} alt="Desconectar" className="collection"/>
                         </a>    
-                        ) : {}}
                     </div>
                 </div>
             </header>
-        )
+        );
     }
 }

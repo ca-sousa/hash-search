@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Routes from './routes';
 
 import './assets/styles/global.css'
 
-function App() {
-  return (
-    <Routes />
-  );
+class App extends Component {
+  render () {
+    return <Routes />
+  }
 }
 
 export default App;

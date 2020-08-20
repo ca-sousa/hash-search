@@ -2,21 +2,18 @@ import React, { Component } from 'react';
 
 import Header from '../../components/Header';
 import SearchInput from '../../components/SearchInput';
-import Landing from '../Landing';
 
 import './style.css'
 
 export default class Search extends Component {
-    //Login
     state = {
       user: {},
       error: null,
       authenticated: false
     };
 
-    _handleNotAuthenticated() {
+    _handleNotAuthenticated = () => {
         this.setState({ authenticated: false });
-        return false
     };
 
     componentDidMount() {
@@ -30,7 +27,7 @@ export default class Search extends Component {
         })
           .then(response => {
             if (response.status === 200) return response.json();
-            throw new Error("failed to authenticate user");
+            throw new Error("Failed to authenticate user");
           })
           .then(responseJson => {
             this.setState({
@@ -47,14 +44,12 @@ export default class Search extends Component {
     }
 
     render() {
+      const { authenticated } = this.state;
       return (
         <div id='page-search'>
-            <Landing
-                authenticated={state.authenticated}
-            />
             <Header 
-                authenticated={state.authenticated}
-                handleNotAuthenticated={_handleNotAuthenticated}
+                authenticated={authenticated}
+                handleNotAuthenticated={this._handleNotAuthenticated}
             />
             <main>
               <form>
@@ -66,5 +61,3 @@ export default class Search extends Component {
       )
     }
 }
-
-export default Search;
