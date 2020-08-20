@@ -7,10 +7,10 @@
 Summary
 =================
 <!--ts-->
-   * [Instructions]
-      * [Back-end]
-      * [Front-end]
-   * [Software]
+   * Instructions
+      * Back-end
+      * Front-end
+   * Software
 <!--te-->
 ### Instructions
 First make a git clone on this repository, don't forget to install [Node.js](https://nodejs.org/en/), and [Docker](https://docs.docker.com/get-docker/).
