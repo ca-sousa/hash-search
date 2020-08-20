@@ -3,6 +3,20 @@ const TwitterStrategy = require("passport-twitter");
 const keys = require("./keys");
 const User = require("../models/user-model");
 
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id)
+    .then(user => {
+      done(null, user);
+    })
+    .catch(e => {
+      done(new Error("Failed to deserialize an user"));
+    });
+});
+
 passport.use(
   new TwitterStrategy(
     {
@@ -29,17 +43,3 @@ passport.use(
     }
   )
 );
-
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser((id, done) => {
-  User.findById(id)
-    .then(user => {
-      done(null, user);
-    })
-    .catch(e => {
-      done(new Error("Failed to deserialize an user"));
-    });
-});

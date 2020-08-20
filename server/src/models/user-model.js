@@ -9,7 +9,8 @@ const userSchema = new Schema({
   created_at: String,
   id: String, 
   text: String,
-  coordinates: Number
+  coordinates: Number,
+  user: String,
 });
 
 const User = mongoose.model("user", userSchema);

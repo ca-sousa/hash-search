@@ -56,7 +56,8 @@ router.get('/search', async (req, res) => {
     return {
       created_at: element.created_at,
       text: element.text,
-      id: element.id_str
+      id: element.id_str,
+      user: element.user.name,
     }
   })
   return res.json(response)
