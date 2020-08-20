@@ -1,25 +1,25 @@
-import React, { useState, FormEvent } from 'react';
+import React, { Component } from 'react';
+
 import Header from '../../components/Header';
-import PropTypes from "prop-types";
-import './style.css'
 import SearchInput from '../../components/SearchInput';
-import api from '../../services/api';
 import Landing from '../Landing';
 
-function Search () {
+import './style.css'
+
+export default class Search extends Component {
     //Login
-    const state = {
+    state = {
       user: {},
       error: null,
       authenticated: false
     };
 
-    function _handleNotAuthenticated(this: any) {
+    _handleNotAuthenticated() {
         this.setState({ authenticated: false });
         return false
     };
 
-    function componentDidMount(this: any) {
+    componentDidMount() {
         fetch("http://localhost:3333/auth/login/success", {
           method: "GET",
           credentials: "include",
@@ -45,41 +45,26 @@ function Search () {
             });
         });
     }
-    
-    //Dados da API
-/*    const [tweetShare, setTweetShare] = useState(''); //do campo de pesquisa
 
-    const [tweets, setTweet] = useState([]); //tweet de resposta da api
-
-    async function searchTweets(e: FormEvent) {
-        e.preventDefault();
-
-        const response = await api.get('', {
-            params: {
-                tweetShare
-            }
-        })
-
-        setTweet(response.data);
-    }
-*/
-
-    return (
+    render() {
+      return (
         <div id='page-search'>
             <Landing
                 authenticated={state.authenticated}
             />
             <Header 
                 authenticated={state.authenticated}
-                handleNotAuthenticated={state.authenticated}
+                handleNotAuthenticated={_handleNotAuthenticated}
             />
             <main>
-                
+              <form>
                 <SearchInput />
                 <button type="submit">Pesquisar</button>    
+              </form>
             </main>
         </div>
-    );
+      )
+    }
 }
 
 export default Search;
