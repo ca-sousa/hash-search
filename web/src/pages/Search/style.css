@@ -9,6 +9,46 @@
     width: 90%;
 }
 
+main h3 {
+    text-align: center;
+    font: 500 2.3rem Barlow;
+    margin-bottom: 1rem;
+}
+
+.input {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input input {
+    width: 80%;
+    height: 5rem;
+    font:500 1.6rem Barlow;
+    border-radius: 1rem;
+    border-color: var(--color-background);
+    background-color: var(--color-background);
+    padding: 0 1.6rem;
+}
+
+.input input::placeholder{
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    font:500 1.6rem Barlow;
+}   
+
+.input button {
+    font:700 1.6rem Rubik;
+    justify-content: right;
+    width: 15%;
+    border-radius: 1rem;
+    border-color: var(--color-primary-light);
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 0;
+}
+
 @media (min-width: 700px) {
     #page-search {
         max-width: 100vw;

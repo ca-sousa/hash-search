@@ -22,18 +22,15 @@ export default class Results extends Component {
             <article className="tweet-item">
                 <header>
                     <div>
-                        <strong>Alguma coisa</strong>
-                        <span>23</span>
+                        <img src="https://pbs.twimg.com/profile_images/1125484112113033217/udasflgv_400x400.jpg" alt="Nome"/>
+                        <strong>Carla Sousa</strong>
+                        <span>•</span>
+                        <span>14 de Agosto</span>
                     </div>
                 </header>
                 <p>
                     Este é um tweet
                 </p>
-                <footer>  
-                    <button type='button'>
-                    <img src={heart} alt="Adicionar a Coleção"/> Adicione a sua Coleção
-                    </button>
-                </footer>
             </article>
         )
     }

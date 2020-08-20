@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Header from '../../components/Header';
-import SearchInput from '../../components/SearchInput';
 import HereMap  from '../../components/HereMap';
 
 import './style.css'
@@ -26,7 +25,12 @@ export default class Maps extends React.Component {
                 />
                 <main>
                     <div className="input-map">
-                        <SearchInput />
+                        <form>
+                            <div className="input">
+                                <input type='text' id="hashtag" placeholder="Busque a Hashtag"/>
+                                <button type='submit'>Buscar</button>
+                            </div>
+                        </form>
                     </div>
                     <HereMap/>
                 </main>

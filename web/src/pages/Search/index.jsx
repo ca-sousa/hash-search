@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from '../../components/Header';
-import SearchInput from '../../components/SearchInput';
+import Results from '../../components/Results';
 
 import './style.css'
 
@@ -52,11 +52,16 @@ export default class Search extends Component {
                 handleNotAuthenticated={this._handleNotAuthenticated}
             />
             <main>
-              <form>
-                <SearchInput />
-                <button type="submit">Pesquisar</button>    
-              </form>
+                <h3>Pesquise a Hashtag que deseja no campo abaixo</h3>
+                <form>
+                  <div className="input">
+                      <input type='text' id="hashtag" placeholder="Busque a Hashtag"/>
+                      <button type='submit'>Buscar</button>
+                  </div>
+                </form>
+                <Results />
             </main>
+            
         </div>
       )
     }

@@ -13,8 +13,42 @@
 .input-map {
     position: absolute;
     z-index: 1;
-    padding: 1rem 0 0 9rem;
+    width: 100%;
+    padding: 1rem 10% 0 10%;
 }
+
+.input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input input {
+    width: 75%;
+    height: 5rem;
+    font:500 1.6rem Barlow;
+    border-radius: 1rem;
+    border-color: var(--color-background);
+    background-color: var(--color-background);
+    padding: 0 1.6rem;
+}
+
+.input input::placeholder{
+    padding: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    font:500 1.6rem Barlow;
+}   
+
+.input button {
+    font:700 1.6rem Rubik;
+    justify-content: right;
+    width: 20%;
+    border-radius: 1rem;
+    border-color: var(--color-primary-light);
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
 
 @media (min-width: 700px) {
     #page-map {
@@ -27,7 +61,7 @@
     }
 
     .input-map {
-        padding: 1rem 0 0 42%;
-        width: 60%;
+        padding: 1rem 30% 0 30%;
+        width: 100%;
     }
 }
