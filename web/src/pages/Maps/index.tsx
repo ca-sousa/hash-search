@@ -7,13 +7,21 @@ import './style.css'
 
 
 function Maps() {
+    const state = {
+        user: {},
+        error: null,
+        authenticated: false
+    };
+
     function _handleNotAuthenticated(this: any) {
         this.setState({ authenticated: false });
+        return false;
     };
     
     return (
         <div id='page-map'>
             <Header 
+                authenticated={state.authenticated}
                 handleNotAuthenticated={_handleNotAuthenticated} 
             />
             <main>

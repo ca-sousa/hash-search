@@ -10,8 +10,11 @@ services:
     networks:
       - app-network
     ports:
-        - 27017:27017
-
+        - 27017:27017 
+          
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  dbdata:

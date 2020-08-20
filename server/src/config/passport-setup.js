@@ -4,7 +4,7 @@ const keys = require("./keys");
 const User = require("../models/user-model");
 
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+  done(null, user.get('id'));
 });
 
 passport.deserializeUser((id, done) => {
@@ -22,7 +22,7 @@ passport.use(
     {
       consumerKey: keys.TWITTER_CONSUMER_KEY,
       consumerSecret: keys.TWITTER_CONSUMER_SECRET,
-      callbackURL: "/auth/twitter/redirect"
+      callbackURL: "http://localhost:3000/search"
     },
     async (token, tokenSecret, profile, done) => {
       const currentUser = await User.findOne({

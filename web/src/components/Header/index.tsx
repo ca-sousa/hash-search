@@ -34,7 +34,7 @@ function Header({authenticated, handleNotAuthenticated}:any) {
                     </Link>
                     { authenticated ? (
                     <a onClick={_handleLogoutClick}>
-                        <img src={user} alt="Sua Coleção" className="collection"/>
+                        <img src={user} alt="Desconectar" className="collection"/>
                     </a>    
                     ) : {}}
                 </div>
@@ -45,7 +45,7 @@ function Header({authenticated, handleNotAuthenticated}:any) {
 
 Header.propTypes = {
     authenticated: PropTypes.bool.isRequired,
-    handleNotAuthenticated: PropTypes.bool.isRequired,
+    handleNotAuthenticated: PropTypes.func,
 };
 
 export default Header;

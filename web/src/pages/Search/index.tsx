@@ -1,22 +1,22 @@
 import React, { useState, FormEvent } from 'react';
 import Header from '../../components/Header';
-import Results from '../../components/Results';
-
+import PropTypes from "prop-types";
 import './style.css'
 import SearchInput from '../../components/SearchInput';
 import api from '../../services/api';
 import Landing from '../Landing';
 
-function Search() {
+function Search () {
     //Login
-    function _handleNotAuthenticated(this: any) {
-        this.setState({ authenticated: false });
+    const state = {
+      user: {},
+      error: null,
+      authenticated: false
     };
 
-    const state = {
-        user: {},
-        error: null,
-        authenticated: false
+    function _handleNotAuthenticated(this: any) {
+        this.setState({ authenticated: false });
+        return false
     };
 
     function componentDidMount(this: any) {
@@ -47,7 +47,7 @@ function Search() {
     }
     
     //Dados da API
-    const [tweetShare, setTweetShare] = useState(''); //do campo de pesquisa
+/*    const [tweetShare, setTweetShare] = useState(''); //do campo de pesquisa
 
     const [tweets, setTweet] = useState([]); //tweet de resposta da api
 
@@ -62,6 +62,7 @@ function Search() {
 
         setTweet(response.data);
     }
+*/
 
     return (
         <div id='page-search'>
@@ -69,14 +70,13 @@ function Search() {
                 authenticated={state.authenticated}
             />
             <Header 
-                handleNotAuthenticated={_handleNotAuthenticated}
+                authenticated={state.authenticated}
+                handleNotAuthenticated={state.authenticated}
             />
             <main>
-                <form onSubmit={searchTweets}>
+                
                 <SearchInput />
-                </form>
                 <button type="submit">Pesquisar</button>    
-                <SearchInput />
             </main>
         </div>
     );
