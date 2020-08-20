@@ -51,3 +51,6 @@ The following softwares were used in the construction of the project:
 - [Docker](https://www.docker.com/)
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+
+### Status
+Building...
