@@ -25,7 +25,7 @@ $ yarn install
 # Run dockerfile, the database is here
 $ docker-compose up
 
-# Execute a aplicação em modo de desenvolvimento
+# Run the application in development mode
 $ yarn run
 
 # The server will start on the port:3333 - acess <http://localhost:3333>
@@ -38,7 +38,7 @@ $ cd web
 # Install the dependencies
 $ yarn install
 
-# Execute a aplicação em modo de desenvolvimento
+# Run the application in development mode
 $ yarn run
 
 # The server will start on the port:3000 - acess <http://localhost:3000>
