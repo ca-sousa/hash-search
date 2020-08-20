@@ -7,14 +7,14 @@
 Summary
 =================
 <!--ts-->
-   * Instructions
-      * Back-end
-      * Front-end
-   * Software
+   * [Instructions](#instructions)
+      * [Back-end](#back)
+      * [Front-end](#front)
+   * [Software](#software)
 <!--te-->
-### Instructions
+### Instructions <a name="instructions"></a>
 First make a git clone on this repository, don't forget to install [Node.js](https://nodejs.org/en/), and [Docker](https://docs.docker.com/get-docker/).
-### Back-end
+### Back-end <a name="back"></a>
 ```bash
 # Go to Server Directory
 $ cd server
@@ -30,7 +30,7 @@ $ yarn run
 
 # The server will start on the port:3333 - acess <http://localhost:3333>
 ```
-### Front-end
+### Front-end <a name="front"></a>
 ```bash
 # Go to Web Directory
 $ cd web
@@ -44,13 +44,12 @@ $ yarn run
 # The server will start on the port:3000 - acess <http://localhost:3000>
 ```
 
-### Software
+### Software <a name="software"></a>
 The following softwares were used in the construction of the project:
 - [Node.js](https://nodejs.org/en/)
 - [MongoDB](https://www.mongodb.com/)
 - [Docker](https://www.docker.com/)
 - [React](https://pt-br.reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
 
 ### Status
 Building...
