@@ -44,13 +44,12 @@ var t = new twit({
   access_token_secret: keys.TWITTER_TOKEN_SECRET, 
 });
 
-var params = {
-  q: '#cachorro', //query_string express
-  count: '2',
-  lang: 'pt'
-}
-
 router.get('/search', async (req, res) => {
+  var params = {
+    q: '#'+req.query.q, 
+    count: '25',
+    lang: 'pt'
+  }
   const twitterResponse = await t.get('search/tweets', params)
   const response = twitterResponse.data.statuses.map((element, index) => {
     return {
@@ -64,6 +63,11 @@ router.get('/search', async (req, res) => {
 });
 
 router.get('/search-map', async (req, res) => {
+  var params = {
+    q: '#'+req.query.q, 
+    count: '25',
+    lang: 'pt'
+  }
   const twitterResponse = await t.get('search/tweets', params)
   const response = twitterResponse.data.statuses.map((element, index) => {
     return {
