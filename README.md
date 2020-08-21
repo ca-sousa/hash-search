@@ -25,12 +25,8 @@ First make a git clone on this repository, don't forget to install [Node.js](htt
 # In .env.backup erase .backup and put the authentication keys for Twitter
 $ cd server
 
-
 # Install the dependencies
 $ yarn install
-
-# Run dockerfile, the database is here
-$ docker-compose up
 
 # Run the application in development mode
 $ yarn run
