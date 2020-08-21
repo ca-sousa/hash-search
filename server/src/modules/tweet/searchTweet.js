@@ -27,7 +27,7 @@ const searchTweets = async (req, res) => {
 const searchGeoTweets = async (req, res) => {
   const params = {
     q: `#${req.query.q}`,
-    count: '50',
+    count: '80',
     lang: 'pt',
   };
   const twitterResponse = await twitter.get('search/tweets', params);

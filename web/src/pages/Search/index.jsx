@@ -49,9 +49,6 @@ export default class Search extends Component {
     super(props);
     this.state = {
       q: [],
-      createdAt: "",
-      text: "",
-      user: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -65,10 +62,9 @@ export default class Search extends Component {
   handleSearch(event) {
     const param = this.state.q;
     api
-      .get("/auth/search", { q: { param } })
+      .get("/auth/search?q=", { param })
       .then((response) => {
-        this.setState(response.data);
-        console.log(response.data);
+        console.log(response);
       })
       .catch((e) => {
         console.log(e);
