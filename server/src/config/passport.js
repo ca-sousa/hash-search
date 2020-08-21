@@ -2,7 +2,7 @@
 const passport = require('passport');
 const TwitterStrategy = require('passport-twitter');
 const { TWITTER_TOKENS } = require('./keys');
-const User = require('../models/user-model');
+const User = require('../models/userModel');
 
 passport.serializeUser((user, done) => {
   done(null, user.get('id'));

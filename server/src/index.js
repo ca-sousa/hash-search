@@ -7,7 +7,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const authRoutes = require('./modules/auth-routes');
+const authRoutes = require('./routes');
 const { MONGODB, SESSION } = require('./config/keys');
 
 const app = express();
