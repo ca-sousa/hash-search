@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Header from "../../components/Header";
 import api from "../../services/api";
+import TweetItem from "../../components/SearchItem";
 
 import "./style.css";
 
@@ -49,6 +50,7 @@ export default class Search extends Component {
     super(props);
     this.state = {
       q: [],
+      tweets: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -65,6 +67,7 @@ export default class Search extends Component {
       .get("/auth/search?q=", { param })
       .then((response) => {
         console.log(response);
+        this.setState({ tweets: response.data });
       })
       .catch((e) => {
         console.log(e);
@@ -74,6 +77,7 @@ export default class Search extends Component {
   }
 
   render() {
+    console.log(this.state.tweets);
     const { authenticated } = this.state;
     return (
       <div id="page-search">
@@ -95,20 +99,14 @@ export default class Search extends Component {
               <button type="submit">Buscar</button>
             </div>
           </form>
-          <article className="tweet-item">
-            <header>
-              <div>
-                <img
-                  src="https://pbs.twimg.com/profile_images/1125484112113033217/udasflgv_400x400.jpg"
-                  alt="Nome"
-                />
-                <strong>Carla Sousa</strong>
-                <span>•</span>
-                <span>14 de Agosto</span>
-              </div>
-            </header>
-            <p>Este é um tweet</p>
-          </article>
+          {this.state.tweets.map((tweet) => (
+            <TweetItem
+              photo={tweet.photo}
+              user={tweet.user}
+              created_at={tweet.created_at}
+              text={tweet.text}
+            />
+          ))}
         </main>
       </div>
     );

@@ -18,8 +18,8 @@ const searchTweets = async (req, res) => {
   const response = twitterResponse.data.statuses.map((element) => ({
     created_at: element.created_at,
     text: element.text,
-    id: element.id_str,
     user: element.user.name,
+    photo: element.user.profile_image_url,
   }));
   return res.json(response);
 };
